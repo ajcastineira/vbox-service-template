@@ -55,9 +55,9 @@
 # PATH should only include /usr/* if it runs after the mountnfs.sh script
 PATH=/sbin:/usr/sbin:/bin:/usr/bin
 # Pull DESC from file header
-DESC=`grep --max-count=1 "^# Short-Description:" $(readlink -f $0)|cut --delimiter=' ' --field=3-`
+DESC=`grep --max-count=1 "^# Short-Description:" $(readlink -f $0)|cut --delimiter=' ' --field=3-|sed 's/^ *//'`
 # Pull NAME from file header
-NAME=`grep --max-count=1 "^# Provides:" $(readlink -f $0)|cut --delimiter=' ' --field=3-`
+NAME=`grep --max-count=1 "^# Provides:" $(readlink -f $0)|cut --delimiter=' ' --field=3-|sed 's/^ *//'`
 SCRIPTNAME=/etc/init.d/$NAME
 
 MANAGE_CMD=VBoxManage
@@ -186,7 +186,7 @@ do_reload() {
 
 do_wait_for_online() {
     echo Waiting for \"$VM_LONG_NAME\" to come up on the network...
-    while [ ! "$result" = "0" ]  ; do
+    while [ ! "$result" = "0" ] ; do
         sleep 1
         ping -c 1 $VM_HOSTNAME >/dev/null 2>/dev/null
         result=$?
