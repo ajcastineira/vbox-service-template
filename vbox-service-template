@@ -73,7 +73,7 @@ if [ `whoami` = $VM_OWNER ] ; then SUDO_CMD="" ; else SUDO_CMD="sudo -H -u $VM_O
 # Set VBoxManage command for stop action
 if [ $VM_STOP = powerbutton ] ; then VM_STOP_CMD=acpipowerbutton ; else VM_STOP_CMD=savestate ; fi
 
-# If VM_HOSTNAME isn't set (for 'startwait' command) use VM_SHORTNAME
+# If VM_HOSTNAME isn't set (for 'start-wait' command) use VM_SHORTNAME
 if [ ! "$VM_HOSTNAME" ] ; then VM_HOSTNAME=$VM_SHORT_NAME; fi
 
 # Load the VERBOSE setting and other rcS variables
