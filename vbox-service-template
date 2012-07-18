@@ -42,7 +42,7 @@
 #  6. Which stop command? "hibernate" or "powerbutton"
       VM_STOP=hibernate
 #
-#  7. For the 'startwait' command -- waiting until network is up, what is the
+#  7. For the 'start-wait' command -- waiting until network is up, what is the
 #     VM's hostname?
       VM_HOSTNAME=""
 #
