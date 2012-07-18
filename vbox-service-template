@@ -11,6 +11,8 @@
 
 # Author: Brendan Kidwell <brendan@glump.net>
 # License: GPL 3 <http://opensource.org/licenses/GPL-3.0>
+#
+# Based on /etc/init.d/skeleton from Ubuntu 12.04.
 
 #-------------------------------------------------------------------------------
 #
@@ -99,7 +101,6 @@ get_vm_state()
         LONG_STATE=missing
         SHORT_STATE=missing
     fi
-
 }
 
 do_start()
