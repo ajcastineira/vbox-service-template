@@ -13,7 +13,7 @@ Make a copy of the script as `/etc/init.d/vbox-NAME` and follow the instructions
 
 To mark the service for automatic start at boot time:
 
-* Ubuntu: `update-rc.d vbox-NAME defaults 30` (The '30' is to make sure it starts after the VirtualBox core services.
+* Ubuntu: `update-rc.d vbox-NAME defaults 90` (The '90' is to make sure it starts after the VirtualBox core services.
 * Fedora: `chkconfig vbox-NAME on`
 
 To remove the service from the boot process:
