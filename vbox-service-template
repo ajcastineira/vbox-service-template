@@ -105,10 +105,10 @@ get_vm_state()
 
 do_start()
 {
-	# Return
-	#   0 if daemon has been started
-	#   1 if daemon was already running
-	#   2 if daemon could not be started
+    # Return
+    #   0 if daemon has been started
+    #   1 if daemon was already running
+    #   2 if daemon could not be started
 
     get_vm_state
 
@@ -127,8 +127,8 @@ do_start()
         return 2
     }
 
-	# No status report; VBoxManage said if it worked.
-	return 0
+    # No status report; VBoxManage said if it worked.
+    return 0
 }
 
 do_stop()
@@ -162,8 +162,8 @@ do_stop()
         get_vm_state
     done
 
-	echo The VM \"$VM_LONG_NAME\" has been stopped \($VM_STOP\).
-	return 0
+    echo The VM \"$VM_LONG_NAME\" has been stopped \($VM_STOP\).
+    return 0
 }
 
 do_status()
