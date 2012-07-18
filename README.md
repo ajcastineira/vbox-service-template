@@ -13,12 +13,12 @@ Make a copy of the script as `/etc/init.d/vbox-NAME` and follow the instructions
 
 To mark the service for automatic start at boot time:
 
-* Ubuntu: `update-rc.d vbox-NAME defaults`
+* Ubuntu: `update-rc.d vbox-NAME defaults 30` (The '30' is to make sure it starts after the VirtualBox core services.
 * Fedora: `chkconfig vbox-NAME on`
 
 To remove the service from the boot process:
 
-* Ubuntu: `update-rc.d vbox-NAME purge`
+* Ubuntu: `update-rc.d -f vbox-NAME remove`
 * Fedora: `chkconfig vbox-NAME off`
 
 Additionally, if you are going to shut down your computer while a VM is running you should tell VirtualBox how to handle shutdown. Create or edit `/etc/default/virtualbox`:
