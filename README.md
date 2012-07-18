@@ -6,7 +6,7 @@ Sending a `stop` command to the service will either save the state of the VM (hi
 
 ## Installation
 
-Make a copy of the script as `/etc/init.d/vbox-NAME` and follow the instructions in the comments in the script.
+Make a copy of the script as `/etc/init.d/vbox-NAME` and follow the instructions in the comments in the script. Make sure you set the `x` bit on the file to make it executable.
 
 To mark the service for automatic start at boot time:
 

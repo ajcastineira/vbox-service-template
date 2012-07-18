@@ -25,7 +25,8 @@
 #  Setup:
 #
 #  1. Copy this file to /etc/init.d/vbox-'name'. The filename must start with
-#     the prefix "vbox-". Make sure it is marked as executable.
+#     the prefix "vbox-". Make sure you set the 'x' bit on the file to make it
+#     executable.
 #
 #  2. Edit 'Provides', above, to match the filename.
 #
