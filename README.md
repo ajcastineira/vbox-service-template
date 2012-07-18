@@ -1,6 +1,6 @@
 # vbox-service-template
 
-vbox-service-template is a template init.d script for running a VirtualBox machine as a service.
+vbox-service-template is an init.d template script for running a VirtualBox machine as a service.
 
 Sending a `stop` command to the service will either save the state of the VM (hibernate) or send the ACPI Power Button signal to the VM and wait for it to self-terminate (powerbutton).
 
