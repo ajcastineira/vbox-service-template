@@ -2,6 +2,8 @@
 
 vbox-service-template is a template init.d script for running a VirtualBox machine as a service.
 
+Sending a stop command to the service will either save the state of the VM (hibernate) or send the ACPI Power Button signal to the VM and wait for it to self-terminate (powerbutton).
+
 ## Installation
 
 Make a copy of the script as `/etc/init.d/vbox-NAME` and follow the instructions in the comments in the script.
@@ -23,9 +25,26 @@ Additionally, if you are going to shut down your computer while a VM is running 
 
 ## Usage
 
+Start
+
     service vbox-NAME start
-    service vbox-NAME start-wait # Start and wait for the VM to be pingable
+
+Start and wait for the VM to be reachable on the network
+
+    service vbox-NAME start-wait
+
+Stop (hibernate or power button -- see config lines in script)
+
     service vbox-NAME stop
+
+Restart
+
     service vbox-NAME restart
-    service vbox-NAME restart-wait # Restart and wait for the VM to be pingable
+
+Restart and wait for the VM to be reachable on the network
+
+    service vbox-NAME restart-wait
+
+Display status
+
     service vbox-NAME status

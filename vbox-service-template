@@ -38,7 +38,7 @@
 #  5. What user owns the virtual machine?
       VM_OWNER=???
 #
-#  6. Which stop command? "hibernate" or "poweroff"
+#  6. Which stop command? "hibernate" or "powerbutton"
       VM_STOP=hibernate
 #
 #  7. For the 'startwait' command -- waiting until network is up, what is the
@@ -68,7 +68,7 @@ if [ ! "$VM_LONG_NAME" ] ; then VM_LONG_NAME=$VM_SHORT_NAME ; fi
 if [ `whoami` = $VM_OWNER ] ; then SUDO_CMD="" ; else SUDO_CMD="sudo -H -u $VM_OWNER" ; fi
 
 # Set VBoxManage command for stop action
-if [ $VM_STOP = poweroff ] ; then VM_STOP_CMD=acpipowerbutton ; else VM_STOP_CMD=savestate ; fi
+if [ $VM_STOP = powerbutton ] ; then VM_STOP_CMD=acpipowerbutton ; else VM_STOP_CMD=savestate ; fi
 
 # If VM_HOSTNAME isn't set (for 'startwait' command) use VM_SHORTNAME
 if [ ! "$VM_HOSTNAME" ] ; then VM_HOSTNAME=$VM_SHORT_NAME; fi
@@ -177,7 +177,7 @@ do_status()
 }
 
 do_reload() {
-    VM_STOP=poweroff
+    VM_STOP=powerbutton
     VM_STOP_CMD=acpipowerbutton
     do_stop && do_start
 }
@@ -221,7 +221,7 @@ case "$1" in
     # 'force-reload' alias
     #
     [ "$VERBOSE" != no ] && log_daemon_msg "Restarting $DESC" "$NAME"
-    VM_STOP=poweroff
+    VM_STOP=powerbutton
     VM_STOP_CMD=acpipowerbutton
     do_stop
     case "$?" in
